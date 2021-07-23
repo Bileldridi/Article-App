@@ -1,0 +1,28 @@
+<div class="d-flex justify-content-center">
+  <form [formGroup]="articleForm" (ngSubmit)="onSubmitFormGroupe()">
+    <div class="form-group">
+      <label for="formGroupExampleInput">Category</label>
+      <input type="text" class="form-control" id="formGroupExampleInput4" placeholder="Titre" name="category" ngModel
+        formControlName="category" required>
+    </div>
+    <div class="form-group">
+      <label for="formGroupExampleInput">Titre</label>
+      <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Titre" name="title" ngModel
+        formControlName="title" required>
+    </div>
+    <div class="form-group">
+      <label for="formGroupExampleInput2">Image</label>
+      <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Image" name="img" ngModel
+        formControlName="img" required>
+    </div>
+    <div class="form-group">
+      <label for="formGroupExampleInput2">Message</label>
+      <textarea type="text" class="form-control" id="formGroupExampleInput3" placeholder="Message" name="message"
+        ngModel formControlName="message" required></textarea>
+    </div>
+    <div class="d-flex justify-content-between">
+      <button type="submit" [disabled]="articleForm.invalid" class="btn btn-primary">Ajouter</button>
+      <button type="submit" routerLink="" class="btn btn-primary">Articles</button>
+    </div>
+  </form>
+</div>

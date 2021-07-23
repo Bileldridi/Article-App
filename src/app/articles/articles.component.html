@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>Mes articles</h2>
+      <p>Date: {{today}}</p>
+      <p>Date: {{today | date}}</p>
+      <p>Date: {{today | date: 'short'}}</p>
+      <ul class="list-group">
+        <button type="submit" routerLink="/add" class="btn btn-primary">Ajout d'un article</button>
+        <app-article *ngFor="let article of articles; let i = index" [category]="article.category"
+          [title]="article.title" [id]="i">
+        </app-article>
+      </ul>
+    </div>
+  </div>
+</div>

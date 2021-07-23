@@ -1,0 +1,14 @@
+<div class="card">
+  <h5 [ngClass]="{'card-header': true,
+                  'card text-white bg-dark mb-3' : statut === 'non vérifier'}">Article</h5>
+  <div class="card-body">
+    <span class="badge bg-primary">{{statut}}</span>
+    <a [routerLink]="['article', id]">
+      <h5 class="card-title">{{category}}</h5>
+    </a>
+    <span *ngIf="statut === 'vérifier'">&#9989;</span>
+    <input type="text" class="form-control" [(ngModel)]="category" />
+    <p class="card-text" [ngStyle]="{color: statut === 'vérifier' ? 'green' : 'red'}">{{title}}</p>
+    <button class="btn btn-primary" [disabled]="!isAuth" (click)="changeStatus()">changer le statut</button>
+  </div>
+</div>
